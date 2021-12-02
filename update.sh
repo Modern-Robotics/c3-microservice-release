@@ -5,15 +5,13 @@ url=$(curl -s https://api.github.com/repos/hhernandez92/c3-microservice-release/
 | cut -d : -f 2,3 \
 | tr -d \")
 
-echo $url
+baseDirectory="/tmp/fusion/"
+fileName=$(basename $url)
+filePath=${baseDirectory}${fileName}
 
-#baseDirectory="/tmp/fusion/"
-#fileName=$(basename $url)
-#filePath=${baseDirectory}${fileName}
+wget -q ${url} -P "${baseDirectory}"
 
-#wget -q ${url} -P "${baseDirectory}"
-
-#apt install "${filePath}"
-#rm "${filePath}"
+apt install "${filePath}"
+rm "${filePath}"
 
 exit 0
