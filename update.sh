@@ -14,4 +14,6 @@ wget -q ${url} -P "${baseDirectory}"
 apt install "${filePath}"
 rm "${filePath}"
 
+systemctl restart fusion.service
+
 exit 0
