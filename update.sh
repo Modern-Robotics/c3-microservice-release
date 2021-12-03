@@ -9,7 +9,7 @@ baseDirectory="/tmp/fusion/"
 fileName=$(basename $url)
 filePath=${baseDirectory}${fileName}
 
-wget -q ${url} -O "${baseDirectory}${fileName}"
+wget -q ${url} -P "${baseDirectory}"
 
 apt install "${filePath}"
 rm "${filePath}"
